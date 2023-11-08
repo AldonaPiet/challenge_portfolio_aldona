@@ -33,4 +33,16 @@ Podsumowując:
 - Motywacja: wewnętrzna.
 - Oczekiwania względem projektu: zdobycie praktycznych umiejętności, na które mogą się połakomić, (i nie zawieść),  pracodawcy.
 
+## Podzadanie 4:
+
+Wynik: 12/14
+Pyt. z błędem:
+"Inspekcje pozwalają wykryć wszystkie z poniższych za wyjątkiem:"
+
+ODP: "Jak wiele kodu zostało pokryte testami"
+
+"Które z poniższych jest jednym z GŁÓWNYCH zadań implementacji i wykonania testów?"
+
+ODP: "Raportowanie rozbiezności jako incydentów" 
+
 
