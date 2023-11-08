@@ -35,7 +35,8 @@ Podsumowując:
 
 ## Podzadanie 4:
 
-Wynik: 12/14
+### Wynik: 12/14
+
 Pyt. z błędem:
 "Inspekcje pozwalają wykryć wszystkie z poniższych za wyjątkiem:"
 
