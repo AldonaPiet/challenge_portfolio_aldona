@@ -44,6 +44,67 @@ ODP: "Jak wiele kodu zostało pokryte testami"
 
 "Które z poniższych jest jednym z GŁÓWNYCH zadań implementacji i wykonania testów?"
 
-ODP: "Raportowanie rozbiezności jako incydentów" 
+ODP: "Raportowanie rozbiezności jako incydentów"
 
 
+
+***
+
+# Zadanie 2: selektory
+
+## Podzadanie 2:
+
+1. Wypisać wszystkie elementy znajdujące się na [stronie logowania](https://scouts-test.futbolkolektyw.pl/en/login?redirected=true);
+2. Pod każdym elementem wymienić 3 działające selektory (nie muszą być unikalne, ważne jest tylko to, aby działały.
+
+### Moje założenia:
+Szukam elementów na stronie, które są "aktywne" tzn. można je uzupełnić lub mogą nas gdzieś przenieść
+  (czyli np tło itp. się nie liczy).
+
+### Rozwiązanie:
+
+login_input_xpath =
+
+* //*[@id='login']
+* //input[@name='login']
+* //*[contains(@class,'MuiIn' )]//descendant::input[@id='login']
+
+password_input_xpath =
+
+* //*[@id='password']
+* //*[@name='password']
+* //input[@type='password']
+
+remind_input_hyperlink_xpath =
+
+* //*[@id="__next"]/form/div/div[1]/a
+* //*[text()='Remind password' or text()='Przypomnij hasło']
+* //descendant::div/a
+
+language_list_xpath =
+* //*[@id='__next']/form/div/div[2]/div/div
+* //*[contains(@class,'selectMenu')]
+* //*[@id='__next']/form/div/div[2]/div/input//preceding-sibling::div
+
+sign_in_button_xpath =
+
+* //*[@id='__next']/form/div/div[2]/button/span[1]
+* //*[@class='MuiButton-label']
+* //span[contains(@class,'MuiBut')]
+
+#### Dodatkowo
+_UWAGA: Ten fragment kodu 
+pojawia się w DevToolsach tylko kiedy zostanie 
+wybrane/kliknięte okno wyboru języka._
+
+
+language_polish_xpath =
+
+* //*[@id="menu-"]/div[3]/ul/li[1]
+* //*[@data-value="pl"]
+* //ul[@role="listbox"]//child::li[@tabindex="-1"]
+
+language_english_xpath =
+* //*[@id="menu-"]/div[3]/ul/li[2]
+* //*[@data-value="en"]
+* //ul[@role="listbox"]//child::li[@tabindex="0"]
