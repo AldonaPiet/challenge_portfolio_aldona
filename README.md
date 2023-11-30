@@ -16,7 +16,7 @@ Ponieważ bardzo mi zależy zapisałam się zatem do automatyzacji testów - mo�
 Planowałam, w razie przyjęcia mnie do programu mentoringowego, że pociągnę oba jednocześnie. Nie byłoby łatwo ale kto da radę jak nie ja :D 
 Nie mam jednak przed sobą tego szalonego wyzwania, ponieważ nie zostałam przyjęta. Przyszłość pokaże czy dobrze się stało ;)  
 
-Szczęsliwie zdaje się, że robienie rzeczy w odwrotnej kolejności ostatnio mi wychodzi - zdałam wczoraj egzamin ISTQB,
+Szczęśliwie zdaje się, że robienie rzeczy w odwrotnej kolejności ostatnio mi wychodzi - zdałam ostatnio egzamin ISTQB,
 choć praktyki nie mam żadnej i kiedy zaczynałam się uczyć poczułam, że sylabus mógł być równie dobrze napisany w domowolnym 
 języku, w którym rozumiem podstawowe zwroty...kosmos jakiś.
 
@@ -25,7 +25,7 @@ Po przeczytaniu najdłuższych 70 stron w moim życiu wykupiłam sobie bootcamp 
 I zadziałało pięknie :) Następne podejście do sylabusa już było nauką a nie rozszyfrowywaniem znaczenia słów.
 
 Ale zdany egzamin to tylko certyfikat. W moim przypadku udowadnia, 
-że pojmuję teorię. 
+że pojmuję teorię i potrafię przyswajać wiedzę. 
 Do praktyki daleko i tym samym do zdobycia odpowiednich kwalifikacji i do zatrudnienia.
 
 Podsumowując:
@@ -37,14 +37,15 @@ Podsumowując:
 
 ### Wynik: 12/14
 
-Pyt. z błędem:
+Pytania, w których zrobiłam błąd i poprawna odpowiedź:
+
 "Inspekcje pozwalają wykryć wszystkie z poniższych za wyjątkiem:"
 
 ODP: "Jak wiele kodu zostało pokryte testami"
 
 "Które z poniższych jest jednym z GŁÓWNYCH zadań implementacji i wykonania testów?"
 
-ODP: "Raportowanie rozbiezności jako incydentów"
+ODP: "Raportowanie rozbieżności jako incydentów"
 
 
 
