@@ -38,6 +38,7 @@ class AddPlayer(BasePage):
     YouTube_button_xpath = "//*[@aria-label='Add link to Youtube']"
     YouTube_field_xpath = "//*[@name='webYT[0]']"
     submit_button_xpath = "//*[@type='submit']"
+    previous_club_xpath = "//*[@name='prevClub']"
 
 
     def type_in_email_player(self, email_player):
@@ -74,6 +75,9 @@ class AddPlayer(BasePage):
 
     def type_in_club(self, club):
         self.field_send_keys(self.club_field_xpath, club)
+    def type_in_previous_club(self, previous_club):
+        self.field_send_keys(self.previous_club_xpath, previous_club)
+
 
     def type_in_level(self, level):
         self.field_send_keys(self.level_field_xpath, level)
@@ -82,7 +86,7 @@ class AddPlayer(BasePage):
         self.field_send_keys(self.second_position_field_xpath, second_position)
 
 
-    def click_distric_option_button(self):
+    def click_district_option_button(self):
         self.click_on_the_element(self.district_option_button_xpath)
 
 
@@ -123,7 +127,8 @@ class AddPlayer(BasePage):
     def click_submit_button(self):
         self.click_on_the_element(self.submit_button_xpath)
 
-
+    def click_main_page_button(self):
+        self.click_on_the_element(self.Main_page_xpath)
 
     #add_player_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add' zbędny - mógł być użyty do get_page_title ale lepiej korzystać z bardziej uniwersalnej opcji gdzie driver pobiera url strony na której testuje
 

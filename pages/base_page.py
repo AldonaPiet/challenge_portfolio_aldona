@@ -14,13 +14,23 @@ class BasePage():
     def field_send_keys(self, selector, value, locator_type=By.XPATH):  # wpisanie tekstu w pole tekstowe
         return self.driver.find_element(locator_type, selector).send_keys(value)
 
-    def click_on_the_element(self, selector, selector_type=By.XPATH):  # kliknięcie w wybrany element
+    # def clear_text_field(self, selector, locator_type=By.XPATH):
+    #     self.driver.save_screenshot("screenshot-1.png")
+    #     # Find input text box
+    #     input_text_fname = self.driver.find_element(locator_type, selector)
+    #     # Clear the vlaue in input text field
+    #     input_text_fname.clear()
+    #
+    #     # Take a screenshot of the webpage
+    #     driver.save_screenshot("screenshot-2.png")
+
+    def click_on_the_element(self, selector, selector_type=By.XPATH):
         return self.driver.find_element(selector_type, selector).click()
 
-    def get_page_title(self):  # zad 3 sub 3
+    def get_page_title(self):
         return self.driver.title
 
-    def assert_element_text(self, driver, xpath, expected_text):  # zad 3 sub 5*
+    def assert_element_text(self, driver, xpath, expected_text):
         """Comparing expected text with observed value from web element
 
             :param driver: webdriver instance
@@ -33,6 +43,15 @@ class BasePage():
         assert expected_text == element_text, 'Upewnij się co do tekstu który porównujesz'
 
     def wait_for_element_to_be_clickable(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
-        wait = WebDriverWait(self.driver, 5)
+        wait = WebDriverWait(self.driver, 7)
         element = wait.until(EC.element_to_be_clickable((locator_type, locator)))
-        # time.sleep(3)
+
+    def wait_for_element_to_be_visible(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
+        wait = WebDriverWait(self.driver, 7)
+        # element = wait.until(EC.element_to_be_visible((locator_type, locator)))
+        element = wait.until(EC.visibility_of_element_located((locator_type, locator)))
+
+
+
+
+
