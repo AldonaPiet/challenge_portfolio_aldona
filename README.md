@@ -1,5 +1,5 @@
 # Dare IT Challenge - Testy Automatyczne + Python 
-# Zadanie 1: Konfiguracja oprogramowania
+## Zadanie 1: Konfiguracja oprogramowania
 
 Cel zadania:
 
@@ -10,8 +10,8 @@ Cel zadania:
 * sformatować plik README. 
 
 
-## Podzadanie 1:
-### Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
+### Podzadanie 1:
+#### Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
 
 Chcę zostać testerką oprogramowania. 
 
@@ -28,9 +28,9 @@ Podsumowując:
 - Motywacja: wewnętrzna.
 - Oczekiwania względem projektu: zdobycie praktycznych umiejętności, na które mogą się połakomić (i nie zawieść) pracodawcy.
 
-## Podzadanie 4:
+### Podzadanie 4:
 
-### Wynik: 12/14
+#### Wynik: 12/14
 
 Pytania, w których zrobiłam błąd i poprawna odpowiedź:
 
@@ -46,7 +46,7 @@ ODP: "Raportowanie rozbieżności jako incydentów"
 
 ***
 
-# Zadanie 2: Selektory
+## Zadanie 2: Selektory
 
 Cel zadania:
 
@@ -56,16 +56,16 @@ Cel zadania:
 * zrozumieć czym się kierować, aby wyodrębnić te “najlepsze” selektory.
 
 
-## Podzadanie 2:
+### Podzadanie 2:
 
 1. Wypisać wszystkie elementy znajdujące się na [stronie logowania](https://scouts-test.futbolkolektyw.pl/en/login?redirected=true);
 2. Pod każdym elementem wymienić 3 działające selektory (nie muszą być unikalne, ważne jest tylko to, aby działały.
 
-### Moje założenia:
+#### Moje założenia:
 Szukam elementów na stronie, które są "aktywne" tzn. można je uzupełnić lub mogą nas gdzieś przenieść
   (czyli np tło itp. się nie liczy).
 
-### Rozwiązanie:
+#### Rozwiązanie:
 
 login_input_xpath =
 
@@ -96,7 +96,7 @@ sign_in_button_xpath =
 * //*[@class='MuiButton-label']
 * //span[contains(@class,'MuiBut')]
 
-#### Dodatkowo
+##### Dodatkowo
 _UWAGA: Ten fragment kodu 
 pojawia się w DevToolsach tylko kiedy zostanie 
 wybrane/kliknięte okno wyboru języka._
@@ -113,7 +113,7 @@ language_english_xpath =
 * //*[@data-value="en"]
 * //ul[@role="listbox"]//child::li[@tabindex="0"]
 
-# Zadanie 3: Pierwszy test automatyczny i asserty
+## Zadanie 3: Pierwszy test automatyczny i asserty
 
 Cel zadania:
 
@@ -123,7 +123,7 @@ Cel zadania:
 * wykorzystać assert title, 
 * uruchomić test.
 
-# Zadanie 4: Refactor, debugger i przypadki testowe
+## Zadanie 4: Refactor, debugger i przypadki testowe
 
 Cel zadania:
 
@@ -133,7 +133,7 @@ Cel zadania:
 * zautomatyzować stronę internetową na podstawie swoich TC.
 
 
-# Zadanie 5: Robot Framework
+## Zadanie 5: Robot Framework
 
 Cel zadania:
 
@@ -144,7 +144,7 @@ Cel zadania:
 
 
 
-# Zadanie 6: Zgłaszanie błędów i raport z testów
+## Zadanie 6: Zgłaszanie błędów i raport z testów
 
 Cel zadania:
 
