@@ -1,5 +1,18 @@
 
-# Zadanie 1: konfiguracja oprogramowania.
+# Zadanie 1: Konfiguracja oprogramowania
+
+Cel zadania:
+
+* wykonać testy eksploracyjne aplikacji,
+
+* dowiedzieć się jakie programy są niezbędne, aby rozpocząć testowanie automatyczne,
+
+* założyć własne zdalne repozytorium w GitHubie,
+
+* sklonować repozytorium i skonfigurować środowisko pracy,
+
+* sformatować plik README. 
+
 
 ## Podzadanie 1:
 ## Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
@@ -51,7 +64,15 @@ ODP: "Raportowanie rozbieżności jako incydentów"
 
 ***
 
-# Zadanie 2: selektory
+# Zadanie 2: Selektory
+
+Cel zadania:
+
+* dowiedzieć się czym są selektory,
+* dowiedzieć się gdzie szukać selektorów,
+* poznać zapis xPath’ów, 
+* zrozumieć czym się kierować, aby wyodrębnić te “najlepsze” selektory.
+
 
 ## Podzadanie 2:
 
@@ -109,3 +130,43 @@ language_english_xpath =
 * //*[@id="menu-"]/div[3]/ul/li[2]
 * //*[@data-value="en"]
 * //ul[@role="listbox"]//child::li[@tabindex="0"]
+
+# Zadanie 3: Pierwszy test automatyczny i asserty
+
+Cel zadania:
+
+* poznać framework, na którym będziemy pracować,
+* klikać w elementy na stronie,
+* wypełniać pola tekstem,
+* wykorzystać assert title, 
+* uruchomić test.
+
+# Zadanie 4: Refactor, debugger i przypadki testowe
+
+Cel zadania:
+
+* wykonać refactor naszego kodu,  
+* dowiedzieć się jak pracować z debuggerem,  
+* rozwinąć skrzydła wyobraźni- zaprojektujesz i napiszesz test case’y,  
+* zautomatyzować stronę internetową na podstawie swoich TC.
+
+
+# Zadanie 5: Robot Framework
+
+Cel zadania:
+
+* dowiedzieć się czym jest Smoke Tests  
+* dowiedzieć się jak skonfigurować Suite Test  
+* poznać nowy framework,  
+* wygenerować automatycznie raport
+
+
+
+# Zadanie 6: Zgłaszanie błędów i raport z testów
+
+Cel zadania:
+
+* Wykorzystać projekty w jedynym słusznym celu - wyłapywaniu bugów,  
+* Zapoznać się ze strukturą prawidłowo zgłoszonego buga,  
+* Zapoznać się ze strukturą raportów z testów,
+* Stworzyć repozytorium z funkcjonalnym portfolio w README file. <a href="https://github.com/AldonaPiet/Portfolio">PORTFOLIO</a>
