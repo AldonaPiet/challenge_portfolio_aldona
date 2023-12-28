@@ -1,4 +1,4 @@
-
+# Dare IT Challenge - Testy Automatyczne + Python 
 # Zadanie 1: Konfiguracja oprogramowania
 
 Cel zadania:
@@ -11,7 +11,7 @@ Cel zadania:
 
 
 ## Podzadanie 1:
-## Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
+### Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
 
 Chcę zostać testerką oprogramowania. 
 
@@ -21,7 +21,7 @@ Nie mogłam mieć jednak pewności, że dostanę się do programu i jendocześni
 
 Zdałam ostatnio egzamin ISTQB FL, ale zdany egzamin to tylko certyfikat. W moim przypadku udowadnia, 
 że pojmuję teorię i potrafię przyswajać wiedzę. 
-Do praktyki daleko i tym samym do zdobycia odpowiednich kwalifikacji i do zatrudnienia - dlatego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge
+Do praktyki daleko i tym samym do zdobycia odpowiednich kwalifikacji i do zatrudnienia - dlatego zdecydowałam się wziąć udział w wyzwaniu <a href="https://www.dareit.io/challenges/wstep-do-testow-automatycznych" >Dare IT Challenge</a>
 
 Podsumowując:
 - Mój cel: zostać testerem.
@@ -152,3 +152,6 @@ Cel zadania:
 * Zapoznać się ze strukturą prawidłowo zgłoszonego buga,  
 * Zapoznać się ze strukturą raportów z testów,
 * Stworzyć repozytorium z funkcjonalnym portfolio w README file. <a href="https://github.com/AldonaPiet/Portfolio">🔗PORTFOLIO</a>
+
+
+
