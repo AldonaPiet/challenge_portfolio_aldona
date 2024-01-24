@@ -139,7 +139,8 @@ Cel zadania:
 
 * dowiedzieć się czym jest Smoke Tests  
 * dowiedzieć się jak skonfigurować Suite Test  
-* poznać nowy framework,  
+* poznać nowy framework,
+* testy wcześniej zrobione w pythonie przełożyć na RF
 * wygenerować automatycznie raport
 
 
