@@ -11,18 +11,10 @@ class BasePage():
     def __init__(self, driver: WebDriver):
         self.driver = driver
 
-    def field_send_keys(self, selector, value, locator_type=By.XPATH):  # wpisanie tekstu w pole tekstowe
+    def field_send_keys(self, selector, value, locator_type=By.XPATH):  # entering text into a text field
         return self.driver.find_element(locator_type, selector).send_keys(value)
 
-    # def clear_text_field(self, selector, locator_type=By.XPATH):
-    #     self.driver.save_screenshot("screenshot-1.png")
-    #     # Find input text box
-    #     input_text_fname = self.driver.find_element(locator_type, selector)
-    #     # Clear the vlaue in input text field
-    #     input_text_fname.clear()
-    #
-    #     # Take a screenshot of the webpage
-    #     driver.save_screenshot("screenshot-2.png")
+
 
     def click_on_the_element(self, selector, selector_type=By.XPATH):
         return self.driver.find_element(selector_type, selector).click()
@@ -30,7 +22,7 @@ class BasePage():
     def get_page_title(self):
         return self.driver.title
 
-    def assert_element_text(self, driver, xpath, expected_text):
+    def assert_element_text(self, xpath, expected_text):
         """Comparing expected text with observed value from web element
 
             :param driver: webdriver instance
@@ -38,9 +30,9 @@ class BasePage():
             :param expected_text: text what we expecting to be found
             :return: None
         """
-        element = driver.find_element(by=By.XPATH, value=xpath)
+        element = self.driver.find_element(by=By.XPATH, value=xpath)
         element_text = element.text
-        assert expected_text == element_text, 'Upewnij się co do tekstu który porównujesz'
+        assert expected_text == element_text, 'Make sure you compare proper text'
 
     def wait_for_element_to_be_clickable(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
         wait = WebDriverWait(self.driver, 7)

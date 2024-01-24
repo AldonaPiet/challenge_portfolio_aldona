@@ -18,8 +18,10 @@ class TestAddPlayerPage(unittest.TestCase):
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
-        self.driver_service = Service(executable_path=DRIVER_PATH)   # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        self.driver = webdriver.Chrome(service=self.driver_service)  # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
+        self.driver_service = Service(
+            executable_path=DRIVER_PATH)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver = webdriver.Chrome(
+            service=self.driver_service)  # resolving error which showed up during 5th task without changing code -.-
         # self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
         self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
         # self.driver.get('https://dareit.futbolkolektyw.pl/en')
@@ -27,9 +29,12 @@ class TestAddPlayerPage(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
     def test_add_player(self):
+        email_user = 'user06@getnada.com'
+        password_user = 'Test-1234'
+
         user_login = LoginPage(self.driver)
-        user_login.type_in_email('user06@getnada.com')
-        user_login.type_in_password('Test-1234')
+        user_login.type_in_email(email_user)
+        user_login.type_in_password(password_user)
         user_login.click_sign_in()
         user_dashboard = Dashboard(self.driver)
         user_dashboard.click_add_player()
@@ -41,23 +46,29 @@ class TestAddPlayerPage(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
+
 class TestAddPlayerForm(unittest.TestCase):
 
     @classmethod
     def setUp(self):
+        url = "https://scouts-test.futbolkolektyw.pl/en"  # test
+        # url = 'https://dareit.futbolkolektyw.pl/en' # UAT
+
         os.chmod(DRIVER_PATH, 755)
-        self.driver_service = Service(executable_path=DRIVER_PATH)   # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        self.driver = webdriver.Chrome(service=self.driver_service)  # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        # self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://dareit.futbolkolektyw.pl/en')
-        # self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver_service = Service(
+            executable_path=DRIVER_PATH)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver = webdriver.Chrome(
+            service=self.driver_service)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver.get(url)
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
     def test_add_player_form(self):
-        #url = 'https://scouts-test.futbolkolektyw.pl/en'
         email_user = 'user06@getnada.com'
-        password = 'Test-1234'
+        password_user = 'Test-1234'
+        screenshots_last_created_player = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestAddPlayerForm/see_last_created_player.png"
+
+        # data for form
         email_player = 'APkhuhyugb@gmail.com'
         name = 'APolinariana'
         surname = 'APairanilofilo'
@@ -74,19 +85,17 @@ class TestAddPlayerForm(unittest.TestCase):
         language_player = 'French'
         laczy_nas_pilka = 'APaleocochodzi'
         minut_90 = 'APaleocochodzistill'
-        # FB = 'none'
-        YouTube = 'https://www.youtube.com/watch?v=Emanhr-eLWg'
-
-
+        # fb = 'none'
+        youtube = 'https://www.youtube.com/watch?v=Emanhr-eLWg'
 
         user_login = LoginPage(self.driver)
         user_login.type_in_email(email_user)
-        user_login.type_in_password(password)
+        user_login.type_in_password(password_user)
         user_login.wait_for_element_to_be_clickable(LoginPage.sign_in_button_xpath)
 
         user_login.click_sign_in()
         user_dashboard = Dashboard(self.driver)
-        user_dashboard.wait_for_element_to_be_clickable(Dashboard.Add_player_button_xpath)
+        user_dashboard.wait_for_element_to_be_clickable(Dashboard.add_player_button_xpath)
 
         user_dashboard.click_add_player()
         add_a_player_page = AddPlayer(self.driver)
@@ -115,43 +124,45 @@ class TestAddPlayerForm(unittest.TestCase):
         add_a_player_page.type_in_language_player(language_player)
         add_a_player_page.type_in_laczy_nas_pilka(laczy_nas_pilka)
         add_a_player_page.type_in_minut_90(minut_90)
-        # add_a_player_page.type_in_FB(FB)
+        # add_a_player_page.type_in_FB(fb)
         add_a_player_page.click_YouTube()
-        add_a_player_page.type_in_YouTube(YouTube)
+        add_a_player_page.type_in_YouTube(youtube)
         add_a_player_page.wait_for_element_to_be_clickable(AddPlayer.submit_button_xpath)
         add_a_player_page.click_submit_button()
-        add_a_player_page.wait_for_element_to_be_clickable(AddPlayer.Main_page_xpath)
+        add_a_player_page.wait_for_element_to_be_clickable(AddPlayer.main_page_xpath)
         add_a_player_page.click_main_page_button()
         user_dashboard = Dashboard(self.driver)
         user_dashboard.wait_for_element_to_be_clickable(Dashboard.last_created_player_button_xpath)
-        self.driver.save_screenshot("C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestAddPlayerForm/see_last_created_player.png")
+        self.driver.save_screenshot(screenshots_last_created_player)
         user_dashboard.click_last_created_player()
-
-
-
 
     @classmethod
     def tearDown(self):
         self.driver.quit()
 
+
 class TestUpdateLastCreatedPlayerForm(unittest.TestCase):
 
     @classmethod
     def setUp(self):
+        url = "https://scouts-test.futbolkolektyw.pl/en"  # test
+        # url = 'https://dareit.futbolkolektyw.pl/en' # UAT
+
         os.chmod(DRIVER_PATH, 755)
-        self.driver_service = Service(executable_path=DRIVER_PATH)   # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        self.driver = webdriver.Chrome(service=self.driver_service)  # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        # self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        # self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
-        self.driver.get('https://dareit.futbolkolektyw.pl/en')
+        self.driver_service = Service(
+            executable_path=DRIVER_PATH)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver = webdriver.Chrome(
+            service=self.driver_service)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver.get(url)
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
     def test_update_last_created_player_form(self):
         email_user = 'user06@getnada.com'
-        password = 'Test-1234'
+        password_user = 'Test-1234'
         language_player_1 = 'Portuguese'
         previous_club = 'hokuiadsag'
+        screenshots_last_created_player_languages = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateLastCreatedPlayerForm/see_last_updated_player.png"
 
         user_login: LoginPage = LoginPage(self.driver)
         user_login.type_in_email(email_user)
@@ -167,8 +178,7 @@ class TestUpdateLastCreatedPlayerForm(unittest.TestCase):
         add_a_player_page.type_in_previous_club(previous_club)
         add_a_player_page.wait_for_element_to_be_clickable(add_a_player_page.submit_button_xpath)
         add_a_player_page.click_submit_button()
-        self.driver.save_screenshot("C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateLastCreatedPlayerForm/see_last_updated_player.png")
-
+        self.driver.save_screenshot(screenshots_last_created_player_languages)
 
     @classmethod
     def tearDown(self):
@@ -179,12 +189,15 @@ class TestUpdateWrongLastCreatedPlayerForm(unittest.TestCase):
 
     @classmethod
     def setUp(self):
+        url = "https://scouts-test.futbolkolektyw.pl/en"  # test
+        # url = 'https://dareit.futbolkolektyw.pl/en' # UAT
+
         os.chmod(DRIVER_PATH, 755)
-        self.driver_service = Service(executable_path=DRIVER_PATH)   # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        self.driver = webdriver.Chrome(service=self.driver_service)  # rozwiązania problemu który wyskoczył przy zadaniu 5 bez jakiejkolwiek zmiany kodu
-        # self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        # self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
-        self.driver.get('https://dareit.futbolkolektyw.pl/en')
+        self.driver_service = Service(
+            executable_path=DRIVER_PATH)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver = webdriver.Chrome(
+            service=self.driver_service)  # resolving error which showed up during 5th task without changing code -.-
+        self.driver.get(url)
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -198,17 +211,10 @@ class TestUpdateWrongLastCreatedPlayerForm(unittest.TestCase):
         wrong_height_value = 'aaaaaaaa'
         previous_club = 'hokuiadsag'
 
-
-        # date2 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="date-picker_to"]')))
-        # date2.click()
-        # date2.send_keys(Keys.CONTROL + "a")
-        # date2.send_keys(Keys.DELETE)
-        # date2.send_keys("15/11/2021")
-
-        # date2 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="date-picker_to"]')))
-        # date2.click()
-        # date2.clear()
-        # date2.send_keys("15/11/2021")
+        screenshots_player_wrong_birthday = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_birth.png"
+        screenshots_player_wrong_phone = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_phone.png"
+        screenshots_player_wrong_height = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_height.png"
+        screenshots_player_wrong_data = "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_data.png"
 
         user_login: LoginPage = LoginPage(self.driver)
         user_login.type_in_email(email_user)
@@ -217,25 +223,18 @@ class TestUpdateWrongLastCreatedPlayerForm(unittest.TestCase):
         user_login.click_sign_in()
 
         dashboard_page = Dashboard(self.driver)
-        dashboard_page.wait_for_element_to_be_clickable(Dashboard.Add_player_button_xpath)
+        dashboard_page.wait_for_element_to_be_clickable(Dashboard.add_player_button_xpath)
         dashboard_page.click_last_created_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.type_in_birth_date(wrong_birth_date)
-        self.driver.save_screenshot("C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_birth.png")
+        self.driver.save_screenshot(screenshots_player_wrong_birthday)
         add_a_player_page.type_in_phone(wrong_phone)
-        self.driver.save_screenshot(
-            "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_phone.png")
+        self.driver.save_screenshot(screenshots_player_wrong_phone)
         add_a_player_page.type_in_height_value(wrong_height_value)
-        self.driver.save_screenshot(
-            "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_height.png")
-        # add_a_player_page.type_in_email_player(wrong_email_player)
-        # self.driver.save_screenshot(
-        #     "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_e-mail.png")
+        self.driver.save_screenshot(screenshots_player_wrong_height)
         add_a_player_page.type_in_previous_club(previous_club)
         add_a_player_page.click_submit_button()
-        self.driver.save_screenshot(
-            "C:/Users/Aldona/Documents/GitHub/challenges/challenge_portfolio_aldona/screenshots/Scrsht_TestUpdateWrongLastCreatedPlayerForm/updated_wrong_data.png")
-
+        self.driver.save_screenshot(screenshots_player_wrong_data)
 
     @classmethod
     def tearDown(self):
