@@ -29,7 +29,7 @@ Podsumowując:
 - Oczekiwania względem projektu: zdobycie praktycznych umiejętności, na które mogą się połakomić (i nie zawieść) pracodawcy.
 
 ### Podzadanie 4:
-#### Zrobić <a href:"https://getistqb.com/#quizzes">test</a> purpurowy
+#### Zrobić <a href = "https://getistqb.com/#quizzes">test</a> purpurowy
 #### Wynik: 12/14
 
 Pytania, w których zrobiłam błąd i poprawna odpowiedź:
