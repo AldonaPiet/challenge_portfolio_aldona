@@ -30,7 +30,7 @@ Podsumowując:
 
 ### Podzadanie 4:
 #### Zrobić <a href = "https://getistqb.com/#quizzes">test</a> purpurowy
-#### Wynik: 12/14
+###### wynik: 12/14
 
 Pytania, w których zrobiłam błąd i poprawna odpowiedź:
 
